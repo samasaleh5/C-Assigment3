@@ -63,6 +63,19 @@ namespace ConsoleApp3
 
         #endregion
 
+        #region IsPrimeFunction
+        static bool IsPrime(int num)
+        {
+            if (num <= 0)
+                return false;
+            for(int i = 2; i <= Math.Sqrt(num); i++)
+            { 
+                if(num % i == 0)
+                    return false;
+            }
+            return true;
+        }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -107,12 +120,20 @@ namespace ConsoleApp3
             //CalculateSumAndSub(numbers);
             #endregion
             #region Question4
-            Console.WriteLine("Please Enter A Number");
+            //Console.WriteLine("Please Enter A Number");
+            //int num=int.Parse(Console.ReadLine());
+
+            //int sum=CalculateSumOfDigits(num);
+            //Console.WriteLine($"Sum of digits of the number {num} is : {sum}");
+
+            #endregion
+            #region Question5
+            Console.Write("Please Enter A Number to check if it is prime : ");
             int num=int.Parse(Console.ReadLine());
-
-            int sum=CalculateSumOfDigits(num);
-            Console.WriteLine($"Sum of digits of the number {num} is : {sum}");
-
+            if (IsPrime(num))
+                Console.WriteLine($"{num} is A Prime Number");
+            else
+                Console.WriteLine($"{num} is not A Prime Number");
             #endregion
         }
     }
