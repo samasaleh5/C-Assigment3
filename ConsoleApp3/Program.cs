@@ -102,6 +102,15 @@ namespace ConsoleApp3
             return fac;
         }
         #endregion
+
+        #region Change Char
+        static string ChangeCharacter(string str,int pos,char newchar)
+        {
+            char[] chararray=str.ToCharArray();
+            chararray[pos] = newchar;
+            return new string(chararray);
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Question1
@@ -171,11 +180,31 @@ namespace ConsoleApp3
 
             #endregion
             #region Question7
-            Console.Write("Please Enter A number to calculate its factorial: ");
-            int number=int.Parse(Console.ReadLine());
-            long result=CalculateFact(number);
-            Console.WriteLine($"The Factorial of {number} is: {result}");
+            //Console.Write("Please Enter A number to calculate its factorial: ");
+            //int number=int.Parse(Console.ReadLine());
+            //long result=CalculateFact(number);
+            //Console.WriteLine($"The Factorial of {number} is: {result}");
             #endregion
+            #region Question8
+            Console.Write("Enter a string: ");
+            string inputstring=Console.ReadLine();
+
+            Console.Write("Enter Position to change: ");
+            int pos = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter New Char: ");
+            char newchar=char.Parse(Console.ReadLine());
+
+            string modifystring=ChangeCharacter(inputstring, pos,newchar);
+
+            Console.WriteLine($"String after modification : {modifystring}");
+
+            
+
+
+
+            #endregion
+
         }
     }
 }
