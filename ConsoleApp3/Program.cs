@@ -49,6 +49,20 @@ namespace ConsoleApp3
         }
         #endregion
 
+        #region SumOfDigits
+        static int CalculateSumOfDigits(int num) 
+        {
+            int sum = 0;
+            while (num != 0) 
+            {
+                sum += num % 10;
+                num /= 10;
+            }
+            return sum;
+        }
+
+        #endregion
+
 
         static void Main(string[] args)
         {
@@ -84,14 +98,20 @@ namespace ConsoleApp3
 
             #endregion
             #region Question3
-            double[] numbers=new double[4];
-            for (int i = 0; i < numbers.Length; i++)
-            { 
-                Console.WriteLine($"Enter Number {i+1}");
-                numbers[i] =Convert.ToDouble(Console.ReadLine());
-            }
-            CalculateSumAndSub(numbers);
+            //double[] numbers=new double[4];
+            //for (int i = 0; i < numbers.Length; i++)
+            //{ 
+            //    Console.WriteLine($"Enter Number {i+1}");
+            //    numbers[i] =Convert.ToDouble(Console.ReadLine());
+            //}
+            //CalculateSumAndSub(numbers);
+            #endregion
+            #region Question4
+            Console.WriteLine("Please Enter A Number");
+            int num=int.Parse(Console.ReadLine());
 
+            int sum=CalculateSumOfDigits(num);
+            Console.WriteLine($"Sum of digits of the number {num} is : {sum}");
 
             #endregion
         }
