@@ -77,6 +77,20 @@ namespace ConsoleApp3
         }
         #endregion
 
+        #region MinMax Array
+       static void MinMaxArray(int[] nums, ref int min, ref int max)
+        {
+            min = max = nums[0];
+            foreach (int x in nums)
+            {
+                if (x < min)
+                    min = x;
+                if (x > max)
+                    max = x;
+            }
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region Question1
@@ -128,12 +142,22 @@ namespace ConsoleApp3
 
             #endregion
             #region Question5
-            Console.Write("Please Enter A Number to check if it is prime : ");
-            int num=int.Parse(Console.ReadLine());
-            if (IsPrime(num))
-                Console.WriteLine($"{num} is A Prime Number");
-            else
-                Console.WriteLine($"{num} is not A Prime Number");
+            //Console.Write("Please Enter A Number to check if it is prime : ");
+            //int num=int.Parse(Console.ReadLine());
+            //if (IsPrime(num))
+            //    Console.WriteLine($"{num} is A Prime Number");
+            //else
+            //    Console.WriteLine($"{num} is not A Prime Number");
+            #endregion
+            #region Question6
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            int min = 0, max = 0;
+            MinMaxArray(numbers, ref min, ref max);
+
+            Console.WriteLine($"Min value in the array is: {min}");
+            Console.WriteLine($"Max value in the array is: {max}");
+
+
             #endregion
         }
     }
