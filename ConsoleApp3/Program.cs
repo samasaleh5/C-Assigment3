@@ -39,6 +39,15 @@ namespace ConsoleApp3
         }
         #endregion
 
+        #region SumSubFunction
+        static void CalculateSumAndSub(double[] nums) 
+        { 
+            double sum = nums[0]+ nums[1];
+            double subtract = nums[2]-nums[3];
+            Console.WriteLine($"Sum is {sum}");
+            Console.WriteLine($"Sub is {subtract}");
+        }
+        #endregion
 
 
         static void Main(string[] args)
@@ -61,16 +70,27 @@ namespace ConsoleApp3
             //Console.WriteLine($"After PassByReference ={number}");
             #endregion
             #region Question2
-            MyClass c1 = new MyClass();
-            c1.num = 100;
-            Console.WriteLine($"Original value ={c1.num}");
-            //1-function can modify content of object but can not change reference itself
-            PassbyValue(c1);
-            Console.WriteLine($"After PassByValue ={c1.num}");
+            //MyClass c1 = new MyClass();
+            //c1.num = 100;
+            //Console.WriteLine($"Original value ={c1.num}");
+            ////1-function can modify content of object but can not change reference itself
+            //PassbyValue(c1);
+            //Console.WriteLine($"After PassByValue ={c1.num}");
 
-            //2-function can change both object contant and the reference
-            PassByReference(ref c1);
-            Console.WriteLine($"After PassByReference ={c1.num}");
+            ////2-function can change both object contant and the reference
+            //PassByReference(ref c1);
+            //Console.WriteLine($"After PassByReference ={c1.num}");
+
+
+            #endregion
+            #region Question3
+            double[] numbers=new double[4];
+            for (int i = 0; i < numbers.Length; i++)
+            { 
+                Console.WriteLine($"Enter Number {i+1}");
+                numbers[i] =Convert.ToDouble(Console.ReadLine());
+            }
+            CalculateSumAndSub(numbers);
 
 
             #endregion
