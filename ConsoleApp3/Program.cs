@@ -91,6 +91,17 @@ namespace ConsoleApp3
         }
         #endregion
 
+        #region Calculate Factorial
+        static long CalculateFact(int num)
+        {
+            long fac = 1;
+            for(int i = 1;i<=num;i++)
+            {
+                fac *= i;
+            }
+            return fac;
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Question1
@@ -150,14 +161,20 @@ namespace ConsoleApp3
             //    Console.WriteLine($"{num} is not A Prime Number");
             #endregion
             #region Question6
-            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
-            int min = 0, max = 0;
-            MinMaxArray(numbers, ref min, ref max);
+            //int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 };
+            //int min = 0, max = 0;
+            //MinMaxArray(numbers, ref min, ref max);
 
-            Console.WriteLine($"Min value in the array is: {min}");
-            Console.WriteLine($"Max value in the array is: {max}");
+            //Console.WriteLine($"Min value in the array is: {min}");
+            //Console.WriteLine($"Max value in the array is: {max}");
 
 
+            #endregion
+            #region Question7
+            Console.Write("Please Enter A number to calculate its factorial: ");
+            int number=int.Parse(Console.ReadLine());
+            long result=CalculateFact(number);
+            Console.WriteLine($"The Factorial of {number} is: {result}");
             #endregion
         }
     }
